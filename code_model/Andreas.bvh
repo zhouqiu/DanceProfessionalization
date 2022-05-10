@@ -1,0 +1,160 @@
+HIERARCHY
+ROOT Hips
+{
+  OFFSET -3.95883 18.904 13.2082
+  CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
+  JOINT LHipJoint
+  {
+    OFFSET 0 0 0
+    CHANNELS 3 Zrotation Xrotation Yrotation
+    JOINT LeftUpLeg
+    {
+      OFFSET 1.8 -1.4 0.085
+      CHANNELS 3 Zrotation Xrotation Yrotation
+      JOINT LeftLeg
+      {
+        OFFSET 2.215 -6 0
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT LeftFoot
+        {
+          OFFSET 2.5 -6.9 0
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          JOINT LeftToeBase
+          {
+            OFFSET 0.2 -0.5 1.95
+            CHANNELS 3 Zrotation Xrotation Yrotation
+            End Site
+            {
+              OFFSET 0 0 0
+            }
+          }
+        }
+      }
+    }
+  }
+  JOINT RHipJoint
+  {
+    OFFSET 0 0 0
+    CHANNELS 3 Zrotation Xrotation Yrotation
+    JOINT RightUpLeg
+    {
+      OFFSET -1.8 -1.4 0.085
+      CHANNELS 3 Zrotation Xrotation Yrotation
+      JOINT RightLeg
+      {
+        OFFSET -2.215 -6 0
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT RightFoot
+        {
+          OFFSET -2.5 -6.9 0
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          JOINT RightToeBase
+          {
+            OFFSET -0.2 -0.5 1.95
+            CHANNELS 3 Zrotation Xrotation Yrotation
+            End Site
+            {
+              OFFSET 0 0 0
+            }
+          }
+        }
+      }
+    }
+  }
+  JOINT LowerBack
+  {
+    OFFSET 0 0 0
+    CHANNELS 3 Zrotation Xrotation Yrotation
+    JOINT Spine
+    {
+      OFFSET -0.087 1.94 -0.2889
+      CHANNELS 3 Zrotation Xrotation Yrotation
+      JOINT Spine1
+      {
+        OFFSET 0 1.95 0.06
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT Neck
+        {
+          OFFSET 0 0 0
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          JOINT Neck1
+          {
+            OFFSET 0 1.6 0.34
+            CHANNELS 3 Zrotation Xrotation Yrotation
+            JOINT Head
+            {
+              OFFSET 0 1.667 -0.24
+              CHANNELS 3 Zrotation Xrotation Yrotation
+              End Site
+              {
+                OFFSET 0 0 0
+              }
+            }
+          }
+        }
+        JOINT LeftShoulder
+        {
+          OFFSET 0 0 0
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          JOINT LeftArm
+          {
+            OFFSET 2.7 1.55 -0.73
+            CHANNELS 3 Zrotation Xrotation Yrotation
+            JOINT LeftForeArm
+            {
+              OFFSET 5.45 0 0
+              CHANNELS 3 Zrotation Xrotation Yrotation
+              JOINT LeftHand
+              {
+                OFFSET 3.45 0 0
+                CHANNELS 3 Zrotation Xrotation Yrotation
+                JOINT LeftHandIndex1
+                {
+                  OFFSET 0.75 0 0
+                  CHANNELS 3 Zrotation Xrotation Yrotation
+                  End Site
+                  {
+                    OFFSET 0 0 0
+                  }
+                }
+              }
+            }
+          }
+        }
+        JOINT RightShoulder
+        {
+          OFFSET 0 0 0
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          JOINT RightArm
+          {
+            OFFSET -2.7 1.55 -0.73
+            CHANNELS 3 Zrotation Xrotation Yrotation
+            JOINT RightForeArm
+            {
+              OFFSET -5.45 0 0
+              CHANNELS 3 Zrotation Xrotation Yrotation
+              JOINT RightHand
+              {
+                OFFSET -3.45 0 0
+                CHANNELS 3 Zrotation Xrotation Yrotation
+                JOINT RightHandIndex1
+                {
+                  OFFSET -0.75 0 0
+                  CHANNELS 3 Zrotation Xrotation Yrotation
+                  End Site
+                  {
+                    OFFSET 0 0 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+MOTION
+Frames:	1
+Frame Time:	0.00833333
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
