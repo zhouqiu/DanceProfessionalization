@@ -1,19 +1,19 @@
 # DanceProfessionalization
 
-## Prepare:Environment
+## Prepare: Environment
 #### python 3.7
 #### cuda 10.1
 #### pytorch 1.6.0
 #### numpy 1.18.5
 #### librosa 0.8.1
 
-## 1.generate training data & testing data
+## 1. generate training data & testing data
 #### cd code_syn_non_data 
 #### sh start_syn.sh
 
 
 
-## 2.training & testing model
+## 2. training & testing model
 #### cd code_model
 
 ### train alignment DTW
@@ -40,7 +40,7 @@
 
 
 
-## 3.blend
+## 3. blend
 #### cd code_blender
 #### demo.bat
 
