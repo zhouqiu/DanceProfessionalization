@@ -1,6 +1,11 @@
 # DanceProfessionalization
 
-
+## Prepare:Environment
+#### python 3.7
+#### cuda 10.1
+#### pytorch 1.6.0
+#### numpy 1.18.5
+#### librosa 0.8.1
 
 ## 1.generate training data & testing data
 #### cd code_syn_non_data 
