@@ -1,8 +1,8 @@
 from torch.utils.data import DataLoader
-from models.dance_net import AISTModel
-from dataset.long_dataset_dance import Dataset_AIST
+from .models.dance_net import AISTModel
+from .dataset.long_dataset_dance import Dataset_AIST
 from utils.util import print_current_losses
-from options.train_options import TrainOptions
+from .options.train_options import TrainOptions
 
 import os
 

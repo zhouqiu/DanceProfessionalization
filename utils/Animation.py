@@ -2,7 +2,6 @@ import operator
 
 import numpy as np
 import numpy.core.umath_tests as ut
-
 import utils.AnimationStructure as AnimationStructure
 from utils.Quaternions_old import Quaternions
 
@@ -45,8 +44,8 @@ class Animation:
             op(self.parents, other.parents))
 
     def __iop__(self, op, other):
-        self.rotations = op(self.roations, other.rotations)
-        self.positions = op(self.roations, other.positions)
+        self.rotations = op(self.rotations, other.rotations)
+        self.positions = op(self.rotations, other.positions)
         self.orients   = op(self.orients, other.orients)
         self.offsets   = op(self.offsets, other.offsets)
         self.parents   = op(self.parents, other.parents)
@@ -127,7 +126,7 @@ class Animation:
             self.offsets.ravel()])
         
     @classmethod
-    def unravel(clas, anim, shape, parents):
+    def unravel(cls, anim, shape, parents):
         nf, nj = shape
         rotations = anim[nf*nj*0:nf*nj*3]
         positions = anim[nf*nj*3:nf*nj*6]
@@ -137,6 +136,7 @@ class Animation:
             Quaternions.exp(rotations), positions,
             Quaternions.exp(orients), offsets,
             parents.copy())
+
     
     
 """ Maya Interaction """

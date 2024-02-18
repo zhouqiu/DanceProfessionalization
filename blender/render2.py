@@ -1,14 +1,13 @@
 import sys
 import os
-sys.path.append('./')
+# sys.path.append('./')
 
 import bpy
 
-from options import Options
-from load_bvh import load_bvh_allpath
-from scene import make_scene, add_rendering_parameters, add_material_for_character
-from colormap import mapping,camera_poses
-
+from .options import Options
+from .load_bvh import load_bvh_allpath
+from .scene import *
+from .colormap import *
 if __name__ == '__main__':
     args = Options(sys.argv).parse()
 
@@ -18,11 +17,15 @@ if __name__ == '__main__':
     path_list = []
     if args.bvh_path1 != "":
         path_list.append(args.bvh_path1)
-    characters = load_bvh_allpath(path_list)
+    if args.bvh_path2 != "":
+        path_list.append(args.bvh_path2)
+    characters = load_bvh_allpath(path_list, multi=1.5)
 
     scene = make_scene(camera_position=camera_poses[args.camera_position])
 
     add_material_for_character(characters[0], mapping[args.color])
+    add_material_for_character(characters[1], mapping[args.color2])
+
     bpy.ops.object.select_all(action='DESELECT')
 
     # music

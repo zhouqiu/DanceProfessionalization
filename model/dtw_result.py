@@ -1,7 +1,7 @@
 from torch.utils.data import DataLoader
-from models.dtw_net import DTWModel
+from .models.dtw_net import DTWModel
 from utils.util import mkdir
-from options.test_options import TestOptions
+from .options.test_options import TestOptions
 import os
 
 import numpy as np

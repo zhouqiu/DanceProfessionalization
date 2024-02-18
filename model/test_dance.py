@@ -1,8 +1,8 @@
-from dataset.long_dataset_dance import Dataset_AIST
+from .dataset.long_dataset_dance import Dataset_AIST
 from torch.utils.data import DataLoader
-from models.dance_net import AISTModel
+from .models.dance_net import AISTModel
 from utils.util import mkdir, save_result_from_long
-from options.test_options import TestOptions
+from .options.test_options import TestOptions
 import os
 
 import numpy as np

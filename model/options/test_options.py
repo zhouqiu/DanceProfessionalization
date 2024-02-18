@@ -1,4 +1,4 @@
-from options.base_options import BaseOptions
+from .base_options import BaseOptions
 
 class TestOptions(BaseOptions):
     def __init__(self):

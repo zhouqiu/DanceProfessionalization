@@ -2,6 +2,7 @@ import numpy as np
 import scipy.linalg as linalg
 
 import utils.Animation as Animation
+from .Animation import *
 import utils.AnimationStructure as AnimationStructure
 
 from utils.Quaternions_old import Quaternions
@@ -73,7 +74,7 @@ class BasicInverseKinematics:
                 c = np.array(children[j])
                 if len(c) == 0: continue
                 
-                anim_transforms = Animation.transforms_global(self.animation)
+                anim_transforms = transforms_global(self.animation)
                 anim_positions = anim_transforms[:,:,:3,3]
                 anim_rotations = Quaternions.from_transforms(anim_transforms)
                 
@@ -262,7 +263,7 @@ class JacobianInverseKinematics:
         nj = self.animation.shape[1]
         
         if not self.silent:
-            gp = Animation.positions_global(self.animation)
+            gp = positions_global(self.animation)
             gp = gp[:,np.array(list(self.targets.keys()))]            
             error = np.mean(np.sqrt(np.sum((self.endeff - gp)**2.0, axis=2)))
             print('[JacobianInverseKinematics] Start | Error: %f' % error)
@@ -270,7 +271,7 @@ class JacobianInverseKinematics:
         for i in range(self.iterations):
 
             """ Get Global Rotations & Positions """
-            gt = Animation.transforms_global(self.animation)
+            gt = transforms_global(self.animation)
             gp = gt[:,:,:,3]
             gp = gp[:,:,:3] / gp[:,:,3,np.newaxis]
             gr = Quaternions.from_transforms(gt)
@@ -318,7 +319,7 @@ class JacobianInverseKinematics:
             """ Generate Error """
             
             if not self.silent:
-                gp = Animation.positions_global(self.animation)
+                gp = positions_global(self.animation)
                 gp = gp[:,np.array(list(self.targets.keys()))]
                 error = np.mean(np.sum((self.endeff - gp)**2.0, axis=2)**0.5)
                 print('[JacobianInverseKinematics] Iteration %i | Error: %f' % (i+1, error))
@@ -438,14 +439,14 @@ class ICP:
         des_t = des_t[:,weightids].repeat(3, axis=0)
         
         if not self.silent:
-            curr = Animation.skin(self.animation, self.rest, self.vweights, self.mesh, maxjoints=maxjoints)
+            curr = skin(self.animation, self.rest, self.vweights, self.mesh, maxjoints=maxjoints)
             error = np.mean(np.sqrt(np.sum((curr - self.goal)**2.0, axis=-1)))
             print('[ICP] Start | Error: %f' % error)
         
         for i in range(self.iterations):
             
             """ Get Global Rotations & Positions """
-            gt = Animation.transforms_global(self.animation)
+            gt = transforms_global(self.animation)
             gp = gt[:,:,:,3]
             gp = gp[:,:,:3] / gp[:,:,3,np.newaxis]
             gr = Quaternions.from_transforms(gt)
@@ -458,7 +459,7 @@ class ICP:
                 w = np.hstack([w, self.weights_translate.repeat(3)])
             
             """ Get Current State """
-            curr = Animation.skin(self.animation, self.rest, self.vweights, self.mesh, maxjoints=maxjoints)
+            curr = skin(self.animation, self.rest, self.vweights, self.mesh, maxjoints=maxjoints)
 
             """ Find Cloest Points """
             if self.find_closest:
@@ -491,7 +492,7 @@ class ICP:
                 self.animation.positions = x[:,nj*3:].reshape((nf, nj, 3))
         
             if not self.silent:
-                curr = Animation.skin(self.animation, self.rest, self.vweights, self.mesh)
+                curr = skin(self.animation, self.rest, self.vweights, self.mesh)
                 error = np.mean(np.sqrt(np.sum((curr - self.goal)**2.0, axis=-1)))
                 print('[ICP] Iteration %i | Error: %f' % (i+1, error))
                 

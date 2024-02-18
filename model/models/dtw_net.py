@@ -5,7 +5,7 @@ import torch.nn.init as init
 import os
 import math
 import numpy as np
-from models.blocks import ConvBlock, LinearBlock
+from .blocks import ConvBlock, LinearBlock
 from torch.nn.modules.loss import _Loss
 from utils.util import mkdir
 from torch.nn import TransformerEncoder, TransformerEncoderLayer

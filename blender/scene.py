@@ -1,6 +1,6 @@
 import bpy
 import sys
-sys.path.append('./')
+# sys.path.append('./')
 
 
 def add_floor(size, location=(0, 0, 0)):

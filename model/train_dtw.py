@@ -1,8 +1,8 @@
 from torch.utils.data import DataLoader
-from models.dtw_net import DTWModel
-from dataset.long_dataset_align import Dataset_AIST
+from .models.dtw_net import DTWModel
+from .dataset.long_dataset_align import Dataset_AIST
 from utils.util import print_current_losses
-from options.train_options import TrainOptions
+from .options.train_options import TrainOptions
 
 import os
 

@@ -137,6 +137,7 @@ def load(filename, start=None, end=None, order=None, world=False):
             continue
         
         dmatch = line.strip().split(' ')
+        dmatch = list(filter(None,dmatch))
         if dmatch:
             data_block = np.array(list(map(float, dmatch)))
             N = len(parents)
