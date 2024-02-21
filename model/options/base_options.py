@@ -9,16 +9,16 @@ class BaseOptions():
     def initialize(self):
 
         self.parser.add_argument("--gpu_ids", type=str, default="0,1")
-        self.parser.add_argument("--net_root", type=str, default='./all_nets') # 存放所有net的根目录
-        self.parser.add_argument("--net_path", type=str, default='dance')  # 存放当前训练的net的目录
+        self.parser.add_argument("--net_root", type=str, default='./all_nets') # root dictionary of all nets
+        self.parser.add_argument("--net_path", type=str, default='dance')  # dictionary of current net
         self.parser.add_argument("--batch_size", type=int, default=64)
         self.parser.add_argument("--iters", type=int, default=400)
         self.parser.add_argument("--store_freq", type=int, default=20)
 
         self.parser.add_argument("--num_workers", type=int, default=4)
 
-        self.parser.add_argument("--non_path", type=str, default="./train_val_testset", help='')
-        self.parser.add_argument("--music_path", type=str, default="./mp3", help='')
+        self.parser.add_argument("--non_path", type=str, default="../data/train_val_testset", help='')
+        self.parser.add_argument("--music_path", type=str, default="../data/mp3", help='')
         self.parser.add_argument("--dtw_path", type=str, default="", help='')
         self.parser.add_argument("--total_length", type=int, default=3000)
         self.parser.add_argument("--mtype", type=str, default="origin", help="[origin|samegenre|diff]")

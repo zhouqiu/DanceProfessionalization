@@ -153,7 +153,7 @@ class Dataset_AIST(Dataset):
     def __get_all_global_pos(self, quats, rtposes):
         all_global_pos = []
         for i in range(self.length):
-            # 求local position
+            # get local position
             global_position = self.__forward_rotations(quats[i], rtposes[i], trim=True)  # [T, Jo, 3]
             all_global_pos.append(global_position)
         return all_global_pos  # [N, T, Jo, 3]

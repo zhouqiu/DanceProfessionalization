@@ -62,7 +62,7 @@ def print_current_losses(epoch, losses, log_name):
 #     # emotion = data_dict["emotion"]
 #     start = data_dict["start_pos"].detach().cpu().numpy()
 #     #result
-#     # 只改了这里一句
+
 #     quat = quat.squeeze(0).detach().cpu().numpy().reshape(4*24, -1).transpose() # 60,  124
 #     quat = quat.reshape(-1, 24, 4)  # 60, 31, 4
 #     # print("quat shape")
@@ -87,7 +87,7 @@ def print_current_losses(epoch, losses, log_name):
 #     # emotion = data_dict["emotion"]
 #     start = data_dict["start_pos"].detach().cpu().numpy()
 #     #result
-#     # 只改了这里一句
+
 #
 #     quat = quat.reshape(-1, 27, 4)  # T, 27, 4
 #     rt = rt.reshape(-1, 3)
@@ -124,12 +124,12 @@ def save_result_from_long(quat, rt, savepath, static_dict, filename, frameRate=6
     # # emotion = data_dict["emotion"]
     # start = data_dict["start_pos"].detach().cpu().numpy()
     #result
-    # 只改了这里一句
+
 
     quat = quat.reshape(-1, 27, 4)  # T, 27, 4
     rt = rt.reshape(-1, 3)
 
-    #增加一帧Tpose
+    #add one frame Tpose
     quat, rt = add_tpose(quat, rt)
 
     # print(quat.shape)
@@ -158,7 +158,6 @@ def save_result_from_long(quat, rt, savepath, static_dict, filename, frameRate=6
 #     start = data_dict["start_pos"].detach().cpu().numpy()
 #     print(start)
 #     #result
-#     # 只改了这里一句
 #     print(quat.shape)
 #     quat = quat.reshape(-1, 24, 4)  # T, 24, 4
 #     rt = rt.reshape(-1, 3)
@@ -208,7 +207,7 @@ def retarget(rtpos, glb_pos, template_quat):
     return anim.rotations.qs
 
 def get_glb(direct, rtpos, off_len,parents):
-    # 求ik_quat
+    # get ik_quat
 
     length = len(direct)
     direct = direct / np.linalg.norm(direct, axis=-1)[..., np.newaxis] #normalization

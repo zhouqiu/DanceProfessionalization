@@ -361,7 +361,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--split_path", type=str, default="./AISTtable2/crossmodal_") #./table_range/crossmodal_
     parser.add_argument("--dance_path", type=str, default="./AIST++_bvh")
-    parser.add_argument("--store_path", type=str, default="")
+    # parser.add_argument("--store_path", type=str, default="")
     parser.add_argument("--pkg_dir", type=str, default="./train_val_testset")
     parser.add_argument("--pkg_num", type=str, default="non_1")
 
@@ -381,10 +381,10 @@ def parse_args():
 if __name__=="__main__":
     args = parse_args()
 
-    dance_target_dir = os.path.join(args.store_path, args.pkg_dir)
-    mkdir(dance_target_dir)
+    # dance_target_dir = os.path.join(args.store_path, args.pkg_dir)
+    mkdir(args.pkg_dir)
 
-    generate_dance_from_long_seq(args.split_path, args.dance_path, dance_target_dir+"/"+args.pkg_num,
+    generate_dance_from_long_seq(args.split_path, args.dance_path, args.pkg_dir+"/"+args.pkg_num,
                                  args.beat_pad, ampli_alpha=args.ampli_alpha, ampli_beta=args.ampli_beta, rhy_alpha=args.rhy_alpha, rhy_beta=args.rhy_beta,
                                  frame_Rate=args.frameRate, mode=args.mode)
 

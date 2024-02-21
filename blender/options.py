@@ -25,7 +25,7 @@ class Options:
         self.parser.add_argument('--bvh_path2', type=str, default='./example_bvh/example2.bvh', help='path of input bvh file2')
 
         self.parser.add_argument('--save_path', type=str, default='./results/', help='path of output video file')
-        self.parser.add_argument('--music_path', type=str, default="//./examples/mBR0_0.mp3", help='path of music file')
+        self.parser.add_argument('--music_path', type=str, default="./examples/mBR0_0.mp3", help='path of music file')
         self.parser.add_argument('--render_engine', type=str, default='eevee',
                                  help='name of preferable render engine: cycles, eevee')
         self.parser.add_argument('--render', action='store_true', default=False, help='render an output video')
