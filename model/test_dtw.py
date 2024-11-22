@@ -1,4 +1,4 @@
-from .dataset.long_dataset_dance import Dataset_AIST
+from .dataset.long_dataset_align import Dataset_AIST
 from torch.utils.data import DataLoader
 from .models.dtw_net import DTWModel
 from utils.util import mkdir
